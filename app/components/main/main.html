@@ -1,0 +1,64 @@
+<div>
+  <loader-component ng-if="vm.loading"></loader-component>
+  <div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="stype">Vehicle type</label>
+          <select ng-model="vm.vehicle.type"
+                  ng-change="vm.filterData('type')"
+                  class="form-control capitalize"
+                  id="stype">
+            <option value="" name="">--- Select vehicule type --</option>
+            <option ng-repeat="item in vm.types track by $index">{{item}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sbrands">Brand type</label>
+          <select name="sbrnads"
+                  id="sbrands"
+                  ng-model="vm.vehicle.brand"
+                  class="form-control capitalize"
+                  ng-change="vm.filterData('brand')">
+            <option value="">-- Select brand --</option>
+            <option ng-repeat="item in vm.brands track by $index">{{item}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="scolors">Color</label>
+          <select ng-model="vm.vehicle.color"
+                  ng-change="vm.filterData('color')"
+                  name="scolors"
+                  id="scolors"
+                  class="form-control capitalize">
+            <option value="">-- Select color --</option>
+            <option ng-repeat="item in vm.colors track by $index">{{item}}</option>
+          </select>
+        </div>
+      </div>
+      <div ng-if="vm.img" class="col-sm-4 pull-right">
+        <img imgonload class="img-thumb" ng-src="{{vm.img}}" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Types</h3>
+        <pre>{{vm.types | json}}</pre>
+      </div>
+      <div class="col-sm-12">
+        <h3>Brands</h3>
+        <pre>{{vm.brands | json}}</pre>
+      </div>
+      <div class="col-sm-12">
+        <h3>Colors</h3>
+        <pre>{{vm.colors | json}}</pre>
+      </div>
+      <div class="col-sm-12">
+        <h3>Your selection</h3>
+        <pre>
+          {{vm.vehicle | json}}
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
