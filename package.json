@@ -1,7 +1,7 @@
 {
-  "name": "backbase",
+  "name": "Fbindins",
   "version": "1.0.0",
-  "description": "Exercice for backbase 2.7 - erg.api",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "gulp serve:dev",
